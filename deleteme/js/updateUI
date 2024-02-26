@@ -1,0 +1,30 @@
+const updateUI = (label3, label4) => {
+    document.querySelector('div#third label').innerHTML = label3
+    
+    if (label4 !== undefined) {
+        document.querySelector('div#fourth label').innerHTML = label4
+        document.querySelector('div#fourth label').style.display = "inline-block"
+        document.querySelector('div#fourth input').style.display = "inline-block"
+    } else {
+        document.querySelector('div#fourth label').style.display = "none"
+        document.querySelector('div#fourth input').style.display = "none"
+    }
+};
+
+radio_form.addEventListener('click', () => {
+    const shape = radio_form['shape'].value
+    switch (shape) {
+        case 'line':
+            updateUI('x2','y2');
+            break;
+        case 'circle':
+            updateUI('Width:');
+            break;
+        case 'rectangle':
+            updateUI('width:', 'height:');
+            break;
+        case 'square':
+            updateUI('width:');
+            break;
+    }
+});
